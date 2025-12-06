@@ -60,7 +60,7 @@ Generate and send mock data to a specified API endpoint.
 ```
 ## Schema Format
 
-- **String**: `"string"` or `"string[option1,option2]"` for enums
+- **String**: `"string"` or `"string[option1,option2]"` for enums or `"string(minLength,maxLength)"` for ranges
 - **Numbers**: `"integer(min,max)"` or `"float(min,max)"`
 - **Boolean**: `"boolean"`
 - **UUID**: `"uuid"`

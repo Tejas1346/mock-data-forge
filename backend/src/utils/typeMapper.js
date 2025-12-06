@@ -78,6 +78,13 @@ const parseRange = (fieldConfig) => {
               throw new Error('Invalid range values for float');
           }
       }
+      else if(type=='string'){
+          min = parseInt(minStr,10);
+          max = parseInt(maxStr,10);
+          if(isNaN(min) || isNaN(max)){
+              throw new Error('Invalid range values for string length');
+          }
+      }
       else{
           throw new Error('Range type must be integer or float');
       }
@@ -111,8 +118,11 @@ export const getValue = (type) => {
       if(type === 'integer'){
           return faker.number.int({min:min,max:max});
       }
-      else {
+      else if (type==='float') {
           return faker.number.float({min:min,max:max,precision:0.01});
+      }
+      else{
+        return faker.string.alpha({length: {min: min, max: max}});
       }
   }
   //Not Enum Nor Range Type

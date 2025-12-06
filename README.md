@@ -50,6 +50,7 @@ Generate mock data based on a schema without sending it anywhere.
 Generate and send mock data to a specified API endpoint.
 
 **Request Body:**
+```
 {
 "injections": 5,
 "apiUrl": "http://localhost:3000/test",
@@ -62,7 +63,7 @@ Generate and send mock data to a specified API endpoint.
 "isActive": "boolean"
 }
 }
-
+```
 ## Schema Format
 
 - **String**: `"string"` or `"string[option1,option2]"` for enums
@@ -73,7 +74,29 @@ Generate and send mock data to a specified API endpoint.
 - **Date**: `"date"`
 - **Nested Objects**: Standard JSON object notation
 - **Arrays**: `["count", schema]` where count is number of items
-
+```
+{
+  "schema": {
+    "id": "uuid",
+    "name": "string",
+    "email": "email",
+    "age": "integer(18,60)",
+    "salary": "float(30000.0,100000.0)",
+    "city": "string[Mumbai,Delhi,Bangalore]",
+    "isActive": "boolean",
+    "joinDate": "date",
+    "address": {
+      "street": "string",
+      "zipCode": "integer(100000,999999)"
+    },
+    "tags": ["3", "string[developer,designer,manager]"],
+    "projects": ["2", {
+      "project_id": "uuid",
+      "status": "string[active,completed]"
+    }]
+  }
+}
+```
 ## Example Usage
 
 curl -X POST http://localhost:3000/api/inject

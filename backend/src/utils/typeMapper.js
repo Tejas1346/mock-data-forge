@@ -7,6 +7,8 @@ const typeMap = {
   'integer': () => faker.number.int({ min: 1, max: 1000 }),
   'float': () => faker.number.float({ min: 0, max: 1000, precision: 0.01 }),
   'boolean': () => faker.datatype.boolean(),
+  'company':()=>faker.company.name(),
+  'address':()=>faker.location.streetAddress(),
   
   // Semantic types
   'name': () => faker.person.fullName(),

@@ -8,11 +8,11 @@ function App() {
 
 
   return (
-    <div className='min-h-screen bg-[#f4f8fd] w-full'>
+    <div className='min-h-screen bg-[#f4f8fd] w-full overflow-x-auto'>
       <Header></Header>
-      <main className='max-w-screen mx-auto py-6 px-10 w-full'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 '>
-            <div className='flex flex-col gap-4'>
+      <main className='max-w-screen mx-auto py-6 px-10 w-full min-w-[300px]'>
+        <div className='grid grid-cols-1 xl:grid-cols-2 gap-6 '>
+            <div className='flex flex-col gap-4 min-w-[500px]'>
               <SchemaBuilder></SchemaBuilder>
               <InjectionComponent></InjectionComponent>
               

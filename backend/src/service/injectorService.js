@@ -19,7 +19,9 @@ export const inject=async (body)=>{
         const data = generate(schema);
         await axios.post(apiUrl,data)
         .catch((error)=>{
+            console.log(error.message)
             throw new Error(`Error injecting data to ${apiUrl}: ${error.message}`);
+            
         });
     }
 

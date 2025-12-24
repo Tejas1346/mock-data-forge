@@ -19,5 +19,6 @@ export const injectData=async (req,res)=>{
             success: false,
             error: error.message
           });
+          console.log(error)
     }
 }

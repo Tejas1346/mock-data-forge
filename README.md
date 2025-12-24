@@ -1,15 +1,18 @@
 # Mock Data Forge 🔥
 
-A Node.js API service for generating and injecting mock data into any REST API endpoint. Perfect for testing, development, and load testing your backend services.
+A Node.js API service for generating and injecting mock data into any REST API endpoint. Perfect for testing, development, and load testing your backend services. It comes with a frontend as well for simple tasks , we recomment the api for more complex schemas
 
 ## Features
 
 - Generate mock data based on custom schemas
-- Support for multiple data types: `string`, `integer`, `float`, `boolean`, `uuid`, `email`, `date`
+- Support for multiple data types: `string`, `integer`, `float`, `boolean`, `name`, `email`, `phone`, `date`, `address`, `company`, `uuid`, `image_url`, `file_url`
+
 - Enum support for predefined values
 - Range support for numbers with `(min,max)` syntax and strings with `(minLength,maxLength)`
 - Nested objects and arrays
-- Batch injection to any API endpoint
+- Injection to any api(Note:Multiple injections calls the api multiple times not in batches)
+
+
 
 ## Installation
 
@@ -35,12 +38,12 @@ npm run dev
 ### Generate Mock Data
 `POST /api/generate`
 
-Generate mock data based on a schema without sending it anywhere.
+Generate mock data based on a schema .
 
 ### Inject Mock Data
 `POST /api/inject`
 
-Generate and send mock data to a specified API endpoint.
+Generate and send mock data to a specified API endpoint. with the same schema formatting as generate endpoint
 
 **Request Body:**
 - Sample request
@@ -60,15 +63,42 @@ Generate and send mock data to a specified API endpoint.
 ```
 ## Schema Format
 
+### Basic Types
+
 - **String**: `"string"` or `"string[option1,option2]"` for enums or `"string(minLength,maxLength)"` for ranges
-- **Numbers**: `"integer(min,max)"` or `"float(min,max)"`
+- **Integer**: `"integer(min,max)"`
+- **Float**: `"float(min,max)"` or `"float(precision)"` for decimal places
 - **Boolean**: `"boolean"`
+
+### Identifiers and Validation
+
 - **UUID**: `"uuid"`
 - **Email**: `"email"`
+- **Phone**: `"phone"` 
+
+### Personal Information
+
+- **Name**: `"name"`
+- **Address**: `"address"`
+- **Company**: `"company"` 
+
+### Date and Time
+
 - **Date**: `"date"`
+
+
+### URLs and Media
+
+- **Image URL**: `"image_url"`
+- **File URL**: `"file_url"` 
+
+### Complex Types
+
 - **Nested Objects**: Standard JSON object notation
 - **Arrays**: `["count", schema]` where count is number of items
-- Sample Request
+
+### Sample Request to `api/generate`
+
 ```
 {
     "id": "uuid",
@@ -125,18 +155,12 @@ Generate and send mock data to a specified API endpoint.
     ]
 }
 ```
-## Example Usage
-```
-curl -X POST http://localhost:3000/api/inject
--H "Content-Type: application/json"
--d '{
-    "injections": 10,
-    "apiUrl": "https://your-api.com/endpoint",
-    "schema": {
-    "id": "uuid",
-    "username": "string",
-    "age": "integer(18,65)"
-}
-}'
-```
+
+
+
+## Tech Stack
+
+**Client:** React,  TailwindCSS,Shadcn,Zustand
+
+**Server:** Node, Express,FakerJs
 

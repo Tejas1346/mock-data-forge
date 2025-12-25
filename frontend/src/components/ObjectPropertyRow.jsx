@@ -34,7 +34,7 @@ const ObjectPropertyRow = ({ property, parentFieldId }) => {
   }
 
   return (
-    <div className="flex gap-2 items-start p-3 rounded-md border bg-slate-50/50">
+    <div className="flex gap-2 items-start p-3  rounded-md border bg-slate-50/50">
       {/* Property Name */}
       <div className="flex-1">
         <Input

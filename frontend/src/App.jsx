@@ -12,7 +12,7 @@ function App() {
       <Header></Header>
       <main className='max-w-screen mx-auto py-6 px-10 w-full min-w-[300px]'>
         <div className='grid grid-cols-1 xl:grid-cols-2 gap-6 '>
-            <div className='flex flex-col gap-4 min-w-[500px]'>
+            <div className='flex flex-col gap-4 max-w-screen'>
               <SchemaBuilder></SchemaBuilder>
               <InjectionComponent></InjectionComponent>
               

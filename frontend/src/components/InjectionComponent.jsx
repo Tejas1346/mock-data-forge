@@ -49,7 +49,7 @@ const InjectionComponent = () => {
   }
 
   return (
-    <div className="bg-white p-4 rounded-lg">
+    <div className="bg-white p-4 rounded-lg max-w-screen">
       <div className="flex items-center gap-2 mb-4">
         <span>
           <Zap color="#00a63e" />

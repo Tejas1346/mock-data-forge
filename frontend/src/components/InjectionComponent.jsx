@@ -39,7 +39,7 @@ const InjectionComponent = () => {
 
     setIsLoading(true)
     try {
-      await axios.post('http://localhost:8080/api/inject', payload)
+      await axios.post('https://mock-data-forge-e9lr.vercel.app/api/inject', payload)
       console.log('Injection job started:', payload)
     } catch (err) {
       console.error('Injection error:', err)

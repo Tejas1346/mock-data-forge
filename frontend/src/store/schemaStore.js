@@ -254,7 +254,7 @@ export const useSchemaStore = create((set, get) => ({
       }
 
       // send only schema
-      const res = await axios.post('http://localhost:8080/api/generate', schema)
+      const res = await axios.post('https://mock-data-forge-e9lr.vercel.app/api/generate', schema)
 
       set({
         generatedData: res.data,

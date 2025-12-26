@@ -2,6 +2,11 @@
 
 A Node.js API service for generating and injecting mock data into any REST API endpoint. Perfect for testing, development, and load testing your backend services. It comes with a frontend as well for simple tasks , we recomment the api for more complex schemas
 
+
+- Check the app live At https://mock-data-forge-xi.vercel.app/ 
+- Use The api at https://mock-data-forge-e9lr.vercel.app
+
+
 ## Features
 
 - Generate mock data based on custom schemas
@@ -163,4 +168,20 @@ Generate and send mock data to a specified API endpoint. with the same schema fo
 **Client:** React,  TailwindCSS,Shadcn,Zustand
 
 **Server:** Node, Express,FakerJs
+
+
+## Tech Stack
+
+**Client:** React,  TailwindCSS,Shadcn,Zustand
+
+**Server:** Node, Express,FakerJs
+
+
+## Deployment
+
+To deploy this project run this command on both frontend and backend 
+
+```bash
+  npm run dev
+```
 
